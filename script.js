@@ -31,13 +31,14 @@ if (minutes < 10) {
   minutes = `0 ${minutes}`;
 }
 
-currentDate.innerHTML = `${date} ${days[day]}, ${months[month]}, ${year}| ${hours}:${minutes}`;
+currentDate.innerHTML = `${days[day]} ${date} ${months[month]}, ${hours}:${minutes}`;
 
 //search bar
 
 function searchCityname(cityName) {
   let apiKey = "1d038ee28ef2727a9f0310860ac10ae9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&apid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(displayTemperature);
 }
 
